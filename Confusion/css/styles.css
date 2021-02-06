@@ -36,3 +36,89 @@ body {
 .reserve-modal{
 	background-color: #d1c4e9;
 }
+
+.section input[type="radio"]{
+	display: none;
+}
+
+.section input[type="radio"]:checked + .radio-label1{
+	background-color: #01c901;
+	;
+}
+
+.section input[type="radio"]:checked + .radio-label2{
+	background-color: rgb(252, 141, 141);
+}
+
+.section .radio-label1{
+	color:white;
+	background-color: green;
+	padding: 5px 15px;
+	display: inline-block;
+	border-radius: 5px;
+	cursor:pointer;
+	
+}
+
+.section .radio-label2{
+	color:white;
+	background-color: red;
+	padding: 5px 15px;
+	display: inline-block;
+	border-radius: 5px;
+	cursor:pointer
+}
+
+.section .radio-label1:hover{
+	background-color:#01c901
+}
+
+.section .radio-label2:hover{
+	background-color: rgb(252, 141, 141);
+}
+
+.labelred{
+	background-color: red;
+	color: white;
+	padding: 1px 10px;
+	border-radius: 5px;
+	margin: 5px;
+}
+
+.graylabel{
+	background-color: gray;
+	color:white;
+	padding: 1px 10px;
+	border-radius: 20px;
+}
+
+.font-size-15{
+	font-size: 15px;
+}
+
+.row-menu1{
+	height: 250px;
+	display: flex;
+	align-items: flex-start;
+}
+
+.row-menu2{
+	height: 250px;
+	display: flex;
+	align-items: center;
+}
+
+.row-menu3{
+	height: 250px;
+	display: flex;
+	align-items: flex-end;
+}
+
+.img-menu{
+	border-color: white;
+	border-style: ridge;
+	border-width: 5px;
+	border-radius: 5px;
+	
+}
+
