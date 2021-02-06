@@ -4,18 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "lite-server"
+    "start": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Jose Esqueda <js.esq1@gmail.com>",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "dependencies": {
-    "bootstrap": "^4.6.0",
-    "font-awesome": "^4.7.0",
-    "jquery": "^3.5.1",
-    "popper.js": "^1.16.1"
-  },
   "devDependencies": {
     "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "bootstrap-social": "^5.1.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.5.0",
+    "popper.js": "^1.16.1"
   }
 }
