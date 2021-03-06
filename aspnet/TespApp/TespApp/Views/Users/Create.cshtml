@@ -1,0 +1,15 @@
+﻿@model Users
+
+<h1>Create User</h1>
+
+<form asp-action="Create" method="post">
+
+    <input asp-for="first_names" type="text" placeholder="First Name" />
+    <input asp-for="last_names" type="text" placeholder="Last Name" />
+    <input asp-for="email" type="email" placeholder="Email" />
+    <input asp-for="password" type="password" placeholder="Password" />
+
+    <input type="submit" class="btn btn-success" value="Save" />
+</form>
+
+<a asp-action="Index">Back to list</a>

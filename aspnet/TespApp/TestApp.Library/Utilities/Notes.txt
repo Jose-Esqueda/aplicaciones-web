@@ -1,0 +1,13 @@
+﻿To update database context:
+
+1. Install EF Core (one time per machine):
+dotnet tool install --global dotnet-ef
+
+2. Move to library project (cd .\Aluza.Library\)
+
+3. Install these two packages in library (one time per project):
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+
+4. Migrate database to code:
+dotnet ef dbcontext scaffold "" Microsoft.EntityFrameworkCore.SqlServer -f --context TestAppEntities --use-database-names -o DAL/Models --no-onconfiguring --no-pluralize

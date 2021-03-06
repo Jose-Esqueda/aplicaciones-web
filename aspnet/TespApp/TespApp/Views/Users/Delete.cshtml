@@ -1,0 +1,20 @@
+﻿@model Users
+
+<h1>Delete User</h1>
+
+<form asp-action="Delete" method="post">
+
+    <input type="hidden" asp-for="user_id" />
+
+    <input asp-for="first_names" type="text" placeholder="First Name" readonly />
+    <input asp-for="last_names" type="text" placeholder="Last Name" readonly />
+    <input asp-for="email" type="email" placeholder="Email" readonly />
+
+    <div>
+        <input asp-for="isActive" type="checkbox" class="" readonly /> <label>Is Active?</label>
+    </div>
+
+    <input type="submit" class="btn btn-danger" value="Delete" />
+</form>
+
+<a asp-action="Index">Back to list</a>
