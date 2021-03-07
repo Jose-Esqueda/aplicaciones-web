@@ -1,0 +1,23 @@
+﻿@model Cars
+
+<h1>Edit User</h1>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="car_id" />
+    <input type="hidden" asp-for="is_active" />
+    <input type="hidden" asp-for="created_at" />
+
+    <input asp-for="make" type="text" placeholder="Brand" />
+    <input asp-for="model" type="text" placeholder="Model" />
+    <input asp-for="year" type="number" placeholder="Year" />
+
+    <div>
+        <input asp-for="isActive" type="checkbox" class="" /> <label>Is Active?</label>
+    </div>
+
+
+    <input type="submit" class="btn btn-success" value="Save" />
+</form>
+
+<a asp-action="Index">Back to list</a>

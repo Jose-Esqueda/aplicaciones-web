@@ -1,0 +1,14 @@
+﻿@model Cars
+
+<h1>Create User</h1>
+
+<form asp-action="Create" method="post">
+
+    <input asp-for="make" type="text" placeholder="Brand" required />
+    <input asp-for="model" type="text" placeholder="Model" required/>
+    <input asp-for="year" type="number" placeholder="Year" required/>    
+
+    <input type="submit" class="btn btn-success" value="Save" />
+</form>
+
+<a asp-action="Index">Back to list</a>

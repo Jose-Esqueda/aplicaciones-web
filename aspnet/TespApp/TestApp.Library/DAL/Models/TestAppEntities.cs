@@ -17,6 +17,7 @@ namespace TestApp.Library.DAL.Models
         {
         }
 
+        public virtual DbSet<Cars> Cars { get; set; }
         public virtual DbSet<CustomFiles> CustomFiles { get; set; }
         public virtual DbSet<Persons> Persons { get; set; }
         public virtual DbSet<Users> Users { get; set; }
@@ -24,6 +25,29 @@ namespace TestApp.Library.DAL.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
+
+            modelBuilder.Entity<Cars>(entity =>
+            {
+                entity.HasKey(e => e.car_id);
+
+                entity.Property(e => e.created_at)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.is_active)
+                    .IsRequired()
+                    .HasDefaultValueSql("((1))");
+
+                entity.Property(e => e.make)
+                    .IsRequired()
+                    .HasMaxLength(150)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.model)
+                    .IsRequired()
+                    .HasMaxLength(150)
+                    .IsUnicode(false);
+            });
 
             modelBuilder.Entity<CustomFiles>(entity =>
             {
