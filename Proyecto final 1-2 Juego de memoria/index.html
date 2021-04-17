@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Juego de memoria</title>
+
+		<link rel="stylesheet" href="./css/style.css" />
+	</head>
+	<body>
+
+        <div id="modal-result" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h1 id="winner-result-text"></h1>
+            </div>
+        </div>
+
+		<header>
+			<h1>Juego de memoria</h1>
+		</header>
+
+		<section class="players-container">
+			<div class="player-one">
+				<h2 class="player-one-text">Movimientos:</h2>
+			</div>
+			<div class="player-two">
+				<h2 class="player-two-text">0</h2>
+			</div>
+		</section>
+		<section class="board-container">
+			<div class="board">
+				<div class="square" data-key="1" onclick="move(1)"></div>
+				<div class="square" data-key="2" onclick="move(2)"></div>
+				<div class="square" data-key="3" onclick="move(3)"></div>
+				<div class="square" data-key="4" onclick="move(4)"></div>
+				<div class="square" data-key="5" onclick="move(5)"></div>
+				<div class="square" data-key="6" onclick="move(6)"></div>
+				<div class="square" data-key="7" onclick="move(7)"></div>
+				<div class="square" data-key="8" onclick="move(8)"></div>
+				<div class="square" data-key="9" onclick="move(9)"></div>
+                <div class="square" data-key="10" onclick="move(10)"></div>
+                <div class="square" data-key="11" onclick="move(11)"></div>
+                <div class="square" data-key="12" onclick="move(12)"></div>
+				<div class="square" data-key="13" onclick="move(13)"></div>
+				<div class="square" data-key="14" onclick="move(14)"></div>
+				<div class="square" data-key="15" onclick="move(15)"></div>
+				<div class="square" data-key="16" onclick="move(16)"></div>
+			</div>
+		</section>
+
+		<section class="results-container">
+		</section>
+
+		<section class="play-again-container">
+            <div>
+                <a onclick="init()">Play again</a>
+            </div>
+		</section>
+
+		<section class="credits-container">
+			<h2>
+				Modified by <a target="_blank" href="https://jesusrios.dev/">Jose Esqueda</a>
+			</h2>
+		</section>
+
+		<script src="./js/scrip.js"></script>
+	</body>
+</html>

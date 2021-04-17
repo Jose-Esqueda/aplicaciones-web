@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIG - Juego de dados</title>
+    <link rel="stylesheet" href="./css/styles.css">
+
+</head>
+<body>
+    
+    
+    <div id="modal-result" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1 id="winner-result-text"></h1>
+        </div>
+    </div>
+
+    <header>
+        <h1>Juego de dados</h1>
+    </header>
+
+    <section class="play-again-container">
+        <div>
+            <a onclick="init()">Play again</a>
+        </div>
+    </section>
+
+    <section class="board-container">
+        <div class="board">
+
+            <div class="square" id="player1" data-key="1">
+            <h2>Jugador 1</h2>
+            <div class="legen">
+                <h4>Puntos:</h4>        
+            </div>
+            <div class="score">
+                <H1 id="totalPlayer1">0</H1>
+            </div>
+            </div>
+
+            <div class="square" id="player2" data-key="2">
+            <h2>Jugador 2</h2>
+            <div class="legen">
+                <h4>Puntos:</h4>        
+            </div>
+            <div class="score">
+                <H1 id="totalPlayer2">0</H1>
+            </div>
+            
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <div class="roll-dice">
+            Tirar dado
+        </div>
+        <div class="dice" id="dice" onclick="rollDice()"></div>
+        <div class="acumulado">Acumulado: <span id="acumulado">0</span></div>
+
+    </section>
+    <div class="buttons">
+        <button class="button" onclick="guardar()">Guardar</button>
+    </div>
+
+    <section class="results-container">
+    </section>
+
+
+
+    <section class="credits-container">
+        <h2>
+            Modified by <a target="_blank" href="https://jesusrios.dev/">Jose Esqueda</a>
+        </h2>
+    </section>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
