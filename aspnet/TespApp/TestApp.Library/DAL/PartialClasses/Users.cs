@@ -23,6 +23,10 @@ namespace TestApp.Library.DAL.Models
         {
             return await (from x in ctx.Users where x.user_id == user_id select x).FirstOrDefaultAsync();
         }
+        public static async Task<Users> GetItem(TestAppEntities ctx, string email)
+        {
+            return await (from x in ctx.Users where x.email == email select x).FirstOrDefaultAsync();
+        }
         public static async Task<Users> Add(TestAppEntities ctx, Users item)
         {
             ctx.Users.Add(item);

@@ -1,0 +1,69 @@
+﻿@model List<CustomFiles>;
+
+@{
+    ViewData["Title"] = "Custom files list";
+}
+
+<div class="container">
+    <h1>Custom files list</h1>
+
+    <a asp-action="Create" class="btn btn-success">Add new</a>
+    <div class="row">
+        <div class="col-12">
+
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Description</th>
+                        <th>Path</th>
+                        <th>Status</th>
+                        <th>Created</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>@item.customfile_id</td>
+                        <td>@item.description</td>
+                        <td>@item.path</td>
+
+                        @if (item.is_active == true)
+                        {
+                            <td>
+                                <label class="text-success">Active</label>
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                <label class="text-danger">Inactive</label>
+                            </td>
+                        }
+
+                        <td>@item.created_at</td>
+
+                        <td>
+                            <a target="_blank" asp-action="DownloadFile" asp-route-id="@item.customfile_id">Download</a>
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.customfile_id">Edit</a>
+                        </td>
+                        <td>
+                            <a asp-action="Delete" asp-route-id="@item.customfile_id">Delete</a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+</div>

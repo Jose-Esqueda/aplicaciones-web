@@ -1,0 +1,24 @@
+﻿@model UsersExtended
+
+<h1>Edit UserExtended</h1>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="user_id" />
+    <input type="hidden" asp-for="password" />
+    <input type="hidden" asp-for="is_active" />
+    <input type="hidden" asp-for="created_at" />
+
+    <input asp-for="first_names" type="text" placeholder="First Name" />
+    <input asp-for="last_names" type="text" placeholder="Last Name" />
+    <input asp-for="email" type="email" placeholder="Email" />
+
+    <div>
+        <input asp-for="isActive" type="checkbox" class="" /> <label>Is Active?</label>
+    </div>
+
+
+    <input type="submit" class="btn btn-success" value="Save" />
+</form>
+
+<a asp-action="Index">Back to list</a>

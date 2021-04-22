@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    SessionViewModel sessionObject = Context.Session.GetJson<SessionViewModel>("SessionObject") ?? new SessionViewModel();
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -25,16 +29,21 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="TVShowsMovies" asp-action="Index">Movies</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Users</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Cars" asp-action="Index">Cars</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="CustomFiles" asp-action="Index">Custom Files</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="UsersExtended" asp-action="Index">Users Extended</a>
                         </li>
                     </ul>
                 </div>
+
+               <div class="float-right">
+                   <span>Hi, @sessionObject.FirstName !</span>
+                   <a asp-controller="Session" asp-action="Logout">Log out</a>
+               </div>
             </div>
         </nav>
     </header>

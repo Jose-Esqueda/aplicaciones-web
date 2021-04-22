@@ -13,4 +13,8 @@
     <ProjectReference Include="..\TestApp.Library\TestApp.Library.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="customfiles\" />
+  </ItemGroup>
+
 </Project>

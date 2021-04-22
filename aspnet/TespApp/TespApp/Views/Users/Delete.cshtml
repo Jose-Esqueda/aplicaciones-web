@@ -1,14 +1,14 @@
-﻿@model Cars
+﻿@model Users
 
 <h1>Delete User</h1>
 
 <form asp-action="Delete" method="post">
 
-    <input type="hidden" asp-for="car_id" />
+    <input type="hidden" asp-for="user_id" />
 
-    <input asp-for="make" type="text" placeholder="Brand" readonly />
-    <input asp-for="model" type="text" placeholder="Model" readonly />
-    <input asp-for="year" type="email" placeholder="Year" readonly />
+    <input asp-for="first_names" type="text" placeholder="First Name" readonly />
+    <input asp-for="last_names" type="text" placeholder="Last Name" readonly />
+    <input asp-for="email" type="email" placeholder="Email" readonly />
 
     <div>
         <input asp-for="isActive" type="checkbox" class="" readonly /> <label>Is Active?</label>

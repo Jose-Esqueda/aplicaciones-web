@@ -1,0 +1,19 @@
+﻿@model UsersExtended
+
+<h1>Create UserExtended</h1>
+
+<form asp-action="Create" method="post">
+
+    <select asp-for="role_id" asp-items="@((SelectList)ViewBag.listRoles)" required>
+        <option value="">Select a role</option>
+    </select>
+
+    <input asp-for="first_names" type="text" placeholder="First Name" required />
+    <input asp-for="last_names" type="text" placeholder="Last Name" />
+    <input asp-for="email" type="email" placeholder="Email" required />
+    <input asp-for="password" type="password" placeholder="Password" required />
+
+    <input type="submit" class="btn btn-success" value="Save" />
+</form>
+
+<a asp-action="Index">Back to list</a>

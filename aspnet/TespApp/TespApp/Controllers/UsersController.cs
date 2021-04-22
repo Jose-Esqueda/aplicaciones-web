@@ -7,10 +7,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using TespApp.Models;
 using TestApp.Library.DAL.Models;
+using TestApp.Library.BLL;
 
 namespace TespApp.Controllers
 {
-    public class UsersController : Controller
+    public class UsersController : BaseController
     {
         private readonly ILogger<UsersController> _logger;
         private readonly TestAppEntities _ctx;
@@ -41,8 +42,10 @@ namespace TespApp.Controllers
             model.is_active = true;
             model.created_at = DateTime.Now;
 
-            model = await Users.Add(_ctx, model);
-
+            var result = await TestApp.Library.BLL.Session.AddUser(_ctx, model);
+            if(String.IsNullOrWhiteSpace(result.Item2) == false)
+                ModelState.AddModelError("", result.Item2);
+            
             return RedirectToAction(nameof(Index));
         }
 
