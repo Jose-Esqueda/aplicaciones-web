@@ -9,5 +9,7 @@ namespace TespApp.Models
     {
         public int UserId { get; set; }
         public string FirstName { get; set; }
+        public string LastNames { get; set; }
+        public  bool ShowCustomFilesMenu { get; set; }
     }
 }

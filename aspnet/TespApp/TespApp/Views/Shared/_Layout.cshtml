@@ -31,9 +31,13 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Users</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="CustomFiles" asp-action="Index">Custom Files</a>
-                        </li>
+                        @{
+                            if (sessionObject.ShowCustomFilesMenu) { 
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="CustomFiles" asp-action="Index">Custom Files</a>
+                            </li>
+                            }
+                        }
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="UsersExtended" asp-action="Index">Users Extended</a>
                         </li>
@@ -41,7 +45,7 @@
                 </div>
 
                <div class="float-right">
-                   <span>Hi, @sessionObject.FirstName !</span>
+                   <span>Hi, @sessionObject.FirstName @sessionObject.LastNames !</span>
                    <a asp-controller="Session" asp-action="Logout">Log out</a>
                </div>
             </div>

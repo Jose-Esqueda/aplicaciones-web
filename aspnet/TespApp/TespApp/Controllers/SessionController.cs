@@ -31,13 +31,24 @@ namespace TespApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
+            TimeSpan hourMinute;
+            hourMinute = DateTime.Now.TimeOfDay;
+            var isTime = true;
+            if (hourMinute > new TimeSpan(8, 0, 0) && hourMinute <= new TimeSpan(16, 0, 0))
+            {
+                isTime = true;
+            }
+            else
+                isTime = false;
             var result = await Session.ValidateCredentials(_ctx, model.Email, model.Password);
             if(String.IsNullOrWhiteSpace(result.Item2))
             {
                 var sessionObject = new SessionViewModel()
                 {
                     UserId = result.Item1.user_id,
-                    FirstName = result.Item1.first_names
+                    ShowCustomFilesMenu = isTime,
+                    LastNames = result.Item1.last_names,
+                    FirstName = result.Item1.first_names,                    
                 };
 
                 HttpContext.Session.SetJson("SessionObject", sessionObject);
